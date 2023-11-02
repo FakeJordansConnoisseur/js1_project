@@ -2,196 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js"></script>
     <title>Document</title>
-    <style>
-         header {
-            background-color: #c91e1e;
-            color: rgb(221, 186, 186);
-            text-align: center;
-            padding: 10px;
-        }
-        body{
-            background-color: #3797a8;
-        }
-        button{
-            background-color: #bb2d2d;
-        }
-
-        table, th,td {
-            border: 1px solid rgb(77, 35, 35);
-            border-collapse: collapse;
-            width:25%;
-            text-align: center;
-            font-size: larger;
-        }
-        table, tr {
-            height:400%;
-            text-align: center;
-            font-size: larger;
-        }
-        table.a{
-            margin-left:auto;
-            margin-right:auto;
-        }
-        p{
-            text-align: center;
-        }
-    </style>
-    <script>
-        function initalize(){
-            number = 0;
-            tries = 1;
-            curnum = 50;
-             slot = 5;
-             gamble();
-             document.getElementById("hold").innerHTML = "Current Guess: " + curnum;
-             document.getElementById("counter").innerHTML = "Guesses Remaining: "+ slot;
-        }
-        function gamble(){
-            number = parseInt(Math.random() * 100);
-
-        }
-        function alter(val){
-            curnum += val;
-            document.getElementById("hold").innerHTML = "Current Guess: " + curnum;
-        }
-        // function write(){
-        //     why = document.getElementById("p");
-        //     text = document.createTextNode("Dice 1 = "+d1);
-        //     why.appendChild(text);
-        //     text = document.createTextNode("  Dice 2 = "+d2);
-        //     why.appendChild(text);
-        //     text = document.createTextNode("  Total = "+(d1+d2));
-        //     why.appendChild(text);
-        // }
-        function answer(answer){
-            
-
-            slot-= 1;
-            document.getElementById("counter").innerHTML = "Guesses Remaining: "+ slot;
-            if (tries==11){
-                lose()
-            }
-            document.getElementById(String(tries)).innerHTML = answer;
-            document.getElementById(String(tries+1)).innerHTML =  howClose(answer);
-            tries += 2;
-            if (answer==number){
-                win()
-            }
-        }
-        function win(){
-const image = new Image();
-image.src = 'win.jpeg'; 
-image.style.position = 'absolute';
-image.style.top = '50%';
-image.style.left = '50%';
-image.style.height = '115%';
-image.style.width = '115%';
-image.style.transform = 'translate(-50%, -50%)'; 
-document.body.appendChild(image);
-        }
-        function lose(){
-
-const image = new Image();
-image.src = 'lose.jpeg'; 
-image.style.position = 'absolute';
-image.style.top = '50%';
-image.style.left = '50%';
-image.style.height = '115%';
-image.style.width = '115%';
-image.style.transform = 'translate(-50%, -50%)'; 
-document.body.appendChild(image);
-
-        }
-        function howClose(answer){
-            if (Math.abs(number -answer)<=5){
-                return "Very Hot";
-            }
-             else if (Math.abs(number -answer)<=8){
-                return "Hot";
-            }
-             else if (Math.abs(number -answer)<=15){
-                return "Very Warm";
-            }
-             else if (Math.abs(number -answer)<=20){
-                return "Warm";
-            }
-            else if (Math.abs(number -answer)<=30){
-                return "Cool";
-            }
-            else if (Math.abs(number -answer)<=40){
-                return "Very Cool";
-            }
-             else if (Math.abs(number -answer)<=55){
-                return "Cold";
-            } else {
-                return "Very Cold";
-            }
-        }
-        function reload(){
-            location.reload();
-        }
-
-    </script>
 </head>
 <body onload="initalize()">
-    <script type="text/javascript"></script>
-    <header id-="l">
-    <h1 id="hold">
-    </h1>
-    <div id="counter">
+    <h1>Match Game</h1></h1>
+    <h2>Game Rules:</h2> 
+    <h4>Match the pictures beneath the grid!</h4>
+
+    <div class="grid">
+        <div id = "a1">
+            <img class="square" onclick="flipSquare(1);" id="1" src="question.png"/> 
+        </div>
+        <div id = "a2">
+            <img class="square" onclick="flipSquare(2);" id="2" src="question.png"/> 
+        </div>
+        <div id = "a3">
+            <img class="square" onclick="flipSquare(3);" id="3" src="question.png"/> 
+        </div>
+        <div id = "a4">
+            <img class="square" onclick="flipSquare(4);" id="4" src="question.png"/> 
+        </div>
+        <div id = "b1">
+            <img class="square" onclick="flipSquare(5);" id="5" src="question.png"/> 
+        </div>
+        <div id = "b2">
+            <img class="square" onclick="flipSquare(6);" id="6" src="question.png"/> 
+        </div>
+        <div id = "b3">
+            <img class="square" onclick="flipSquare(7);" id="7" src="question.png"/> 
+        </div>
+        <div id = "b4">
+            <img class="square" onclick="flipSquare(8);" id="8" src="question.png"/>  
+        </div>
+        <div id = "c1">
+            <img class="square" onclick="flipSquare(9);" id="9" src="question.png"/> 
+        </div>
+        <div id = "c2">
+            <img class="square" onclick="flipSquare(10);" id="10" src="question.png"/> 
+        </div>
+        <div id = "c3">
+            <img class="square" onclick="flipSquare(11);" id="11" src="question.png"/> 
+        </div>
+        <div id = "c4">
+            <img class="square" onclick="flipSquare(12);" id="12" src="question.png"/> 
+        </div>
+        <div id = "d1">
+            <img class="square" onclick="flipSquare(13);" id="13" src="question.png"/> 
+        </div>
+        <div id = "d2">
+            <img class="square" onclick="flipSquare(14);" id="14" src="question.png"/> 
+        </div>
+        <div id = "d3">
+            <img class="square" onclick="flipSquare(15);" id="15" src="question.png"/> 
+        </div>
+        <div id = "d4">
+            <img class="square" onclick="flipSquare(16);" id="16" src="question.png"/> 
+        </div>
     </div>
-</header>
-    <p>
-    <button onclick = "answer(curnum);">Submit Guess.</button>
-    </p>
-    <p> Add:
-    <button onclick = "alter(25);">25</button>
-    <button onclick = "alter(10);">10</button>
-    <button onclick = "alter(5);">5</button>
-    <button onclick = "alter(1);">1</button>
-     </p>
-
-
-     <p> Subtract:
-        <button onclick = "alter(-25);">25</button>
-        <button onclick = "alter(-10);">10</button>
-        <button onclick = "alter(-5);">5</button>
-        <button onclick = "alter(-1);">1</button>
-         </p>
-
-    <p id="p">
-    </p>
-    <table class="a">
-        <tr id="top">
-            <th>Guess</th>
-            <th>How Close</th>
-        </tr>
-        <tr>
-            <td id="1">-</td>
-            <td id="2">-</td>
-        </tr>
-        <tr>
-            <td id="3">-</td>
-            <td id="4">-</td>
-        </tr>
-        <tr>
-            <td id="5">-</td>
-            <td id="6"6>-</td>
-        </tr>
-        <tr>
-            <td id="7">-</td>
-            <td id="8">-</td>
-        </tr>
-        <tr>
-            <td id="9">-</td>
-            <td id="10">-</td>
-        </tr>
-    </table>
-    <p>
-    <button onclick = "reload();">Reset</button>
-    </p>
+    
+    <!--Bottom of the grid-->
+    <h4 id="score">Score: </h4>
+    <button onclick="reset();">Reset Game</button>
 </body>
 </html>

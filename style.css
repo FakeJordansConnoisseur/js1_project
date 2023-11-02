@@ -1,0 +1,39 @@
+h1 {
+    text-align: center;
+    font-size: 50px;
+    color:rgb(3, 46, 83);
+}
+
+/*Styles the grid of the game*/
+.b{
+    text-align: center;
+    
+}
+
+.grid{
+    display:grid;
+    grid-template-columns: 200px 200px 200px 200px ;
+    grid-template-rows: 200px 200px 200px 200px ;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    grid-gap: 8px;
+}
+.square {
+    align-items: center;
+    background-color:rgb(141, 253, 141);
+    border:  5px solid rgb(4, 129, 0);
+    color: white;
+    display: flex;
+    font-size: 2em;
+    justify-content: center;
+  }
+.grid button {
+    height: 200px;
+    width: 200px;
+}
+
+img {
+    height: 190px;
+    width: 190px;
+}
